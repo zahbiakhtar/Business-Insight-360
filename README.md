@@ -1,162 +1,211 @@
-**Business Insights 360**
-**Project Overview**
-AtliQ Hardware is growing rapidly in the recent years, and they have decided to implement the data analytics using PowerBi in their company for the first time to surpass their competitors in the market and to make data driven decisions. This project is hoped to give answers to the questions of stakeholder in terms all the aspects like finance, sales, marketing and supply chain.
+# 📊 Business Insights 360 – AtliQ Hardware
 
+## 🏢 Project Overview
+AtliQ Hardware is a rapidly growing global company that sells computers and computer accessories. To stay ahead of competitors and enable data-driven decision-making, AtliQ implemented Power BI analytics for the first time.
 
-**Tech stacks**
-SQL
-PowerBi Desktop
-Excel
-DAX language
-DAX studio (for optimizing the report)
-Project charter file
-PowerBI techniques Learnt
-What are all the questions should be asked before staring the project
-Creating calculated columns
-creating measure using DAX language
-Data modeling
-Using Bookmarks to switch between two visuals
-Page navigation with buttons
-Using divide function to prevent zero division errors
-creating date table using m language
-Dynamic titles based on the applied filters
-Using KPI indicators
-Conditional formatting the values in visuals using icons or background color
-Data validation techniques
-PowerBi services
-Publishing reports to PowerBi services
-Setting up personal gateway to set up the auto refresh of data
-PowerBi App creation
-Collaboration, workspace, access permissions in PowerBi services
-And more 😅
+The goal of this project is to provide **360-degree business insights** across:
+- Finance  
+- Sales  
+- Marketing  
+- Supply Chain  
 
+This dashboard helps leadership make informed decisions by analyzing trends, performance, and profitability across markets and channels.
 
-GitHub
-Uploading Large size files using GitHub LFS
-Business related terms
-Gross price
-Pre-invoice deductions
-Post-Invoice deductions
-Net Invoice sale
-Gross Margin
-Net sales
-Net profit
-COGC - cost of goods sold
-YTD - Year to Date
-YTG - Year to Go
-Direct
-Retailer
-Distributors
-Consumer
+---
 
-**Company’s back ground**
+## 🛠️ Tech Stack
+- SQL  
+- Power BI Desktop  
+- Excel  
+- DAX Language  
+- DAX Studio  
+- Power Query (M Language)  
+- Power BI Service  
+- GitHub & Git LFS  
 
-AltiQ hardware is a company which has grown vastly in the recent years, and opened business all over the globe. It is a company which sells, computer and computer accessories through three mediums/channel
+---
 
-Retailers
-Direct
-Distributors
-Recently the company has faced a unforeseen loss by opening store in America based on the surveys, intuition and some excel analysis and also the company’s competitors has handful of analytics team to perform analysis and make data driven decision. So, the AltiQ hardware has no other option other than building their analytics team for data driven insights and decisions in the future to survive better in the industry.
+## 🚀 Power BI Skills & Techniques Used
+- Project Charter & Requirement Gathering  
+- Stakeholder Requirement Analysis  
+- Calculated Columns  
+- DAX Measures  
+- Data Modeling (Snowflake Schema)  
+- Bookmarks for Visual Switching  
+- Page Navigation using Buttons  
+- DIVIDE() function to handle zero-division errors  
+- Date Table using M Language  
+- Dynamic Titles based on Filters  
+- KPI Indicators  
+- Conditional Formatting (Icons & Backgrounds)  
+- Data Validation  
+- Publishing to Power BI Service  
+- Scheduled Refresh using Personal Gateway  
+- Power BI App Creation  
+- Workspace Sharing & Access Permissions  
 
-Project kick off session, where you should get clear of for what and why this project and all other questions you have with regards to the project
+---
 
-Questions to ask before starting with dashboard
-What is the objective of building this PowerBi dashboard?
-In what terms the success of this project will be measured?
-What will be time dead-line of the project?
-do the stakeholders expecting pre-view before the actual release?
-What are all the hopes stakeholders have out of this project?
-what are all fears the stakeholder have in terms of building this dashboard?
-Who are all will be using this dashboard and for what purpose?
-what are all expectation the stakeholders have, by the completion of this project?
-What can go wrong while building this project?
-what are all the resources/ data needed to build this dashboard?
-is there any inputs from stakeholders in terms of design and views of the dashboard?
-After the project kick off meetings, the data engineering team has given the data as per the request of data analytics team, let’s explore them.
+## 📈 Business Terminologies Used
 
-**Dataset Understanding.**
+| Term | Meaning |
+|------|-------|
+| Gross Price | Price before any deductions |
+| Pre-Invoice Deductions | Discounts applied before invoicing |
+| Post-Invoice Deductions | Discounts applied after invoicing |
+| Net Invoice Sale | Sales after all deductions |
+| Gross Margin | Profit before operating expenses |
+| Net Sales | Revenue after deductions |
+| Net Profit | Final business profit |
+| COGC | Cost of Goods Sold |
+| YTD | Year to Date |
+| YTG | Year to Go |
+| Direct | Direct sales from company |
+| Retailer | Third-party sellers |
+| Distributor | Bulk channel partners |
+| Consumer | End user |
 
-Understanding what data is available will be more helpful while doing analysis. before jumping on to the analysis get good understanding of what are data available.
+---
 
-Dimension table : It will have the static data like details of customer and products
+## 🏭 Company Background
+AtliQ Hardware operates globally and sells computers and accessories through three channels:
+- Retailers  
+- Direct Sales  
+- Distributors  
 
-Fact table : It will have the data about the transactions
+The company recently suffered losses after opening a store in the U.S. based on intuition and Excel-based analysis. Since competitors are using advanced analytics, AtliQ decided to build a strong BI team and use Power BI to guide strategic decisions.
 
-**gdb041:**
+---
 
-dim_customer
-27 distinct markets (ex India, USA, spain)
-75 distinct customers thorough out the market
-2 types of platforms
-Brick & Motors - Physical/offline store
-E-commerce - Online Store (Amazon, flipkart)
-Three channels
-Retailer
-Direct
-Distributors
-dim_market
-27 distinct markets (ex India, USA, spain)
-7 sub-zones
-4 regions
-APAC
-EU
-nan
-LATAM
-dim_product
-Divisions
-P & A
-Peripherals
-Accessories
-PC
-Notebook
-Desktop
-N & S
-Networking
-Storage
-There are 14 different categories, Like Internal HDD, keyboard
-There are different variants available for the same product
-fact_forecast_monthly
-This table is used to forecast the customer’s need in advance, which can help in
-Higher customer satisfaction
-Reduced cost in warehouses for storage purpose
-The table is denormalized by data engineering team, as it is a data warehouse which is aimed to be used for analytical work.
-All the date of the month will be replaced by the start date of the month
-It will have all the column names and in the end it will have the forecast quantity need of the customer
-fact_sales_monthly
-This table is more or less is same as fact_forecase_monthly table, but the last column has the value of sold quantity instead of forecast value.
-gdb056
-freight_cost
-This table has details of travel cost and other cost for each market with fiscal year
-gross_price
-Has the details of gross prices with product code
-manufacturing_cost
-Has the details of manufacturing cost with product code with year
-Pre_invoice_dedutions
-Has the details of pre invoice deductions percentage for each cutomer with year
-Post_invoice_deductions
-Post invoice deductions and other deductions details
-Importing data into PowerBi
-As the database is MySQL in this project, we need to import the datasets from Mysql database to PowerBi by providing the Database access credential
-Data Model
-Data modeling plays a vital role and is considered as the basement of report. All the visuals will be build upon the data model.
-Poor data modeling affects the over all performance of the report.
-Following Good practices of data modeling is must. Refer this page to get to know the good practices Blog
-In this project, we have followed Snowfall data modeling method.
+## 🧭 Project Kick-Off – Key Questions
+Before building the dashboard, these questions were clarified:
+- What is the objective of this Power BI dashboard?  
+- How will success be measured?  
+- What is the project deadline?  
+- Will stakeholders require previews?  
+- What are stakeholder expectations and concerns?  
+- Who will use the dashboard?  
+- What risks exist?  
+- What data sources are needed?  
+- Are there design or layout expectations?  
 
+---
 
-**Dashboard designing**
+## 🗄️ Dataset Understanding
 
-Based on the mock ups received as requirement, the team will start designing the visuals and create measure as and when required
+### Dimension Tables
+Contain static master data:
+- Customers  
+- Products  
+- Markets  
 
-**Home view**
+### Fact Tables
+Contain transactional data:
+- Sales  
+- Forecasts  
 
-In Home view, all the views button will be available. User will land on specific view page by clicking the button
+---
 
-Info
-Finance View
-Sales View
-Marketing View
-Supply chain View
-Executive View
-Products
-Support
+## 🧩 Database – gdb041
+
+### dim_customer
+- 75 customers  
+- 27 markets (India, USA, Spain, etc.)  
+- Platforms:
+  - Brick & Mortar (Offline)  
+  - E-commerce (Amazon, Flipkart)  
+- Channels:
+  - Retailer  
+  - Direct  
+  - Distributor  
+
+### dim_market
+- 27 markets  
+- 7 sub-zones  
+- 4 regions:
+  - APAC  
+  - EU  
+  - LATAM  
+  - NA  
+
+### dim_product
+- Divisions:
+  - P & A (Peripherals & Accessories)  
+  - N & S (Networking & Storage)  
+  - PC (Notebook, Desktop)  
+- 14 product categories  
+- Multiple product variants  
+
+### fact_forecast_monthly
+- Forecasted customer demand  
+- Used for:
+  - Inventory planning  
+  - Customer satisfaction  
+- Month-level data (start-date only)
+
+### fact_sales_monthly
+- Actual sold quantities  
+- Same structure as forecast table  
+
+---
+
+## 🧩 Database – gdb056
+
+| Table | Description |
+|------|------------|
+| freight_cost | Logistics and shipping costs by market |
+| gross_price | Product gross prices |
+| manufacturing_cost | Cost to manufacture products |
+| pre_invoice_deductions | Discounts before invoicing |
+| post_invoice_deductions | Discounts after invoicing |
+
+---
+
+## 🔗 Data Import
+Data was imported from **MySQL** into **Power BI** using secure database credentials.
+
+---
+
+## 🧱 Data Modeling
+A **Snowflake Schema** was used for:
+- High performance  
+- Clean relationships  
+- Scalability  
+
+Good data modeling ensures fast visuals and accurate insights.
+
+---
+
+## 📊 Dashboard Design
+
+Dashboards were created based on stakeholder-approved mockups.
+
+### 🏠 Home Page
+A navigation hub with buttons to access each business view.
+
+### 📄 Dashboard Pages
+- Info  
+- Finance View  
+- Sales View  
+- Marketing View  
+- Supply Chain View  
+- Executive View  
+- Products  
+- Support  
+
+Users can navigate easily using interactive buttons.
+
+---
+
+## 🧩 GitHub Setup
+Large Power BI files were uploaded using **GitHub LFS**.
+
+---
+
+## 🏆 Final Outcome
+This project delivers a **360-degree business intelligence solution** for AtliQ Hardware, enabling:
+- Better financial tracking  
+- Customer and product analysis  
+- Sales channel optimization  
+- Supply chain monitoring  
+- Executive-level decision making  
